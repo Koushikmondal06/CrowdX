@@ -85,22 +85,22 @@ export default function CampaignsPage() {
     }
 
     return (
-        <div className="max-w-7xl mx-auto py-12">
-            <div className="mb-12">
-                <h1 className="text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-400">
+        <div className="max-w-7xl mx-auto py-8 sm:py-12 px-4">
+            <div className="mb-8 sm:mb-12">
+                <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-400">
                     Explore Campaigns
                 </h1>
-                <p className="text-text-muted mt-4 text-lg">
+                <p className="text-text-muted mt-3 sm:mt-4 text-base sm:text-lg">
                     Discover and support the next generation of decentralized projects.
                 </p>
             </div>
 
             {campaigns.length === 0 ? (
-                <Card className="p-12 text-center text-text-muted">
+                <Card className="p-8 sm:p-12 text-center text-text-muted">
                     <p>No active campaigns found. Be the first to launch one!</p>
                 </Card>
             ) : (
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
                     {campaigns.map((campaign) => (
                         <CampaignCard key={campaign.address} address={campaign.address} data={campaign} />
                     ))}

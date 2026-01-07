@@ -60,24 +60,24 @@ export default function CreateCampaign() {
     };
 
     return (
-        <div className="max-w-3xl mx-auto py-12">
+        <div className="max-w-3xl mx-auto py-8 sm:py-12 px-4">
             <Link
                 href="/"
-                className="inline-flex items-center text-text-muted hover:text-primary transition-colors mb-8"
+                className="inline-flex items-center text-text-muted hover:text-primary transition-colors mb-6 sm:mb-8"
             >
                 <ArrowLeft className="w-4 h-4 mr-2" /> Back to Home
             </Link>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-12">
                 <div>
-                    <h1 className="text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-400 mb-4">
+                    <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-400 mb-3 sm:mb-4">
                         Launch Your <br /> Vision
                     </h1>
-                    <p className="text-text-muted mb-8">
+                    <p className="text-text-muted mb-6 sm:mb-8 text-sm sm:text-base">
                         Create a campaign, set your goal, and start raising funds on the blockchain in minutes.
                     </p>
 
-                    <div className="space-y-6">
+                    <div className="space-y-4 sm:space-y-6 hidden md:block">
                         <div className="flex items-center gap-4 text-sm text-text-muted">
                             <div className="w-10 h-10 rounded-full bg-surface border border-white/10 flex items-center justify-center">
                                 <Target className="w-5 h-5 text-primary" />
@@ -99,7 +99,7 @@ export default function CreateCampaign() {
                     transition={{ duration: 0.5 }}
                 >
                     <Card className="border-t-4 border-t-primary">
-                        <form onSubmit={createCampaign} className="space-y-6">
+                        <form onSubmit={createCampaign} className="space-y-5 sm:space-y-6">
                             <Input
                                 label="Campaign Title"
                                 name="title"
@@ -113,7 +113,7 @@ export default function CreateCampaign() {
                                 <label className="text-sm font-medium text-text-muted">Description</label>
                                 <textarea
                                     name="description"
-                                    className="w-full h-32 rounded-lg bg-black/40 border border-white/10 px-4 py-3 text-text placeholder:text-text-muted/50 focus:outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/50 transition-all"
+                                    className="w-full h-28 sm:h-32 rounded-lg bg-black/40 border border-white/10 px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base text-text placeholder:text-text-muted/50 focus:outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/50 transition-all"
                                     placeholder="Tell your story..."
                                     value={formData.description}
                                     onChange={handleChange}
@@ -121,7 +121,7 @@ export default function CreateCampaign() {
                                 />
                             </div>
 
-                            <div className="grid grid-cols-2 gap-4">
+                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                 <Input
                                     label="Goal (ETH)"
                                     name="goal"
@@ -145,10 +145,10 @@ export default function CreateCampaign() {
 
                             <Button
                                 type="submit"
-                                className="w-full text-lg h-12"
+                                className="w-full text-base sm:text-lg h-11 sm:h-12"
                                 isLoading={loading}
                             >
-                                <Rocket className="w-5 h-5 mr-2" />
+                                <Rocket className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
                                 Launch Campaign
                             </Button>
                         </form>

@@ -45,27 +45,27 @@ export default function CampaignCard({ address, data }: CampaignProps) {
         <Link href={`/campaigns/${address}`}>
             <Card hoverEffect className="h-full flex flex-col justify-between group">
                 <div>
-                    <div className="flex justify-between items-start mb-4">
+                    <div className="flex justify-between items-start mb-3 sm:mb-4">
                         <span className={`px-2 py-1 rounded-md text-xs font-bold uppercase ${getStatusColor(data.state)}`}>
                             {getStatusText(data.state)}
                         </span>
                         <div className="flex items-center text-text-muted text-xs">
                             <Timer className="w-3 h-3 mr-1" />
-                            {daysLeft} days left
+                            {daysLeft}d left
                         </div>
                     </div>
 
-                    <h3 className="text-xl font-bold text-white mb-2 group-hover:text-primary transition-colors line-clamp-1">
+                    <h3 className="text-lg sm:text-xl font-bold text-white mb-2 group-hover:text-primary transition-colors line-clamp-1">
                         {data.title}
                     </h3>
-                    <p className="text-text-muted text-sm line-clamp-2 mb-6">
+                    <p className="text-text-muted text-xs sm:text-sm line-clamp-2 mb-4 sm:mb-6">
                         {data.description}
                     </p>
                 </div>
 
-                <div className="space-y-4">
+                <div className="space-y-3 sm:space-y-4">
                     <div>
-                        <div className="flex justify-between text-sm mb-2">
+                        <div className="flex justify-between text-xs sm:text-sm mb-2">
                             <span className="text-white font-medium">{formatEther(data.totalRaised)} ETH</span>
                             <span className="text-text-muted">{progress.toFixed(0)}%</span>
                         </div>
@@ -77,15 +77,15 @@ export default function CampaignCard({ address, data }: CampaignProps) {
                         </div>
                     </div>
 
-                    <div className="flex justify-between items-center pt-4 border-t border-white/5">
+                    <div className="flex justify-between items-center pt-3 sm:pt-4 border-t border-white/5">
                         <div className="flex items-center gap-2">
-                            <div className="w-6 h-6 rounded-full bg-gradient-to-br from-purple-500 to-indigo-500" />
-                            <span className="text-xs text-text-muted truncate max-w-[100px]">
-                                by {data.owner.slice(0, 6)}...{data.owner.slice(-4)}
+                            <div className="w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-gradient-to-br from-purple-500 to-indigo-500" />
+                            <span className="text-xs text-text-muted truncate max-w-[80px] sm:max-w-[100px]">
+                                by {data.owner.slice(0, 4)}...{data.owner.slice(-3)}
                             </span>
                         </div>
-                        <Button variant="ghost" className="text-xs h-8 px-3 hover:bg-white/10">
-                            View Details
+                        <Button variant="ghost" size="sm" className="text-xs h-8 px-3 hover:bg-white/10">
+                            View
                         </Button>
                     </div>
                 </div>

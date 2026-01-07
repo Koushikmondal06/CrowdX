@@ -71,21 +71,21 @@ export default function Dashboard() {
     }, [provider, account]);
 
     if (!account) {
-        return <div className="p-12 text-center text-text-muted">Please connect your wallet to view dashboard</div>;
+        return <div className="p-8 sm:p-12 text-center text-text-muted text-sm sm:text-base">Please connect your wallet to view dashboard</div>;
     }
 
     return (
-        <div className="max-w-7xl mx-auto py-12">
-            <h1 className="text-3xl font-bold text-white mb-8">My Dashboard</h1>
+        <div className="max-w-7xl mx-auto py-8 sm:py-12 px-4">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-6 sm:mb-8">My Dashboard</h1>
 
-            <section className="mb-12">
-                <h2 className="text-xl font-medium text-text-muted mb-6">Active Campaigns</h2>
+            <section className="mb-8 sm:mb-12">
+                <h2 className="text-lg sm:text-xl font-medium text-text-muted mb-4 sm:mb-6">Active Campaigns</h2>
                 {myCampaigns.length > 0 ? (
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                         {myCampaigns.map(c => <CampaignCard key={c.address} address={c.address} data={c} />)}
                     </div>
                 ) : (
-                    <Card className="p-6 text-center text-text-muted border-dashed border-white/20">
+                    <Card className="p-6 text-center text-text-muted border-dashed border-white/20 text-sm sm:text-base">
                         You haven't created any campaigns yet.
                     </Card>
                 )}
