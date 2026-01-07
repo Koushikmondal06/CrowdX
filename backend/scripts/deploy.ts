@@ -5,11 +5,11 @@ async function main() {
 
     console.log("Deploying contracts with the account:", deployer.address);
 
-    const factory = await ethers.deployContract("CrowdfundingFactory");
+    const factory = await ethers.deployContract("CrowdXFactory");
 
     await factory.waitForDeployment();
 
-    console.log("CrowdfundingFactory deployed to:", await factory.getAddress());
+    console.log("CrowdXFactory deployed to:", await factory.getAddress());
 }
 
 main().catch((error) => {

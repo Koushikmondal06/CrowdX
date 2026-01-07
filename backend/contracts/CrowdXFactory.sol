@@ -1,9 +1,9 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.20;
 
-import "./cloudfounding.sol";
+import "./CrowdX.sol";
 
-contract CrowdfundingFactory {
+contract CrowdXFactory {
     address[] public campaigns;
 
     event CampaignCreated(
@@ -20,7 +20,7 @@ contract CrowdfundingFactory {
         uint256 _goal,
         uint256 _duration
     ) external {
-        CrowdfundingCampaign campaign = new CrowdfundingCampaign(
+        CrowdX campaign = new CrowdX(
             msg.sender,
             _title,
             _description,
