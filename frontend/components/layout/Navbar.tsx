@@ -27,7 +27,7 @@ export default function Navbar() {
                     <Link href="/" className="flex items-center gap-2 group">
                         <div className="relative w-8 h-8 sm:w-10 sm:h-10 group-hover:scale-105 transition-transform">
                             <Image
-                                src="/logo.png"
+                                src="/logo.svg"
                                 alt="CrowdX Logo"
                                 fill
                                 className="object-contain"
